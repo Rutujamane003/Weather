@@ -278,31 +278,31 @@
 
         
         
-       // Function to convert UNIX timestamp → readable time
-function convertUnixTime(timestamp) {
-    const date = new Date(timestamp * 1000);  // convert seconds → milliseconds
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-}
+        
+     function convertUnixTime(timestamp) {
+        const date = new Date(timestamp * 1000);  // convert seconds → milliseconds
+        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+   }
 
-// 🌅 Sunrise
-let sunrise = document.createElement("div");
-sunrise.innerText = `Sunrise : ${convertUnixTime(data.sys.sunrise)}`;
 
-let img6 = document.createElement("img");
-img6.src ='https://cdn-icons-png.flaticon.com/128/3175/3175147.png';
+    let sunrise = document.createElement("div");
+    sunrise.innerText = `Sunrise : ${convertUnixTime(data.sys.sunrise)}`;
 
-let sunrise_data = document.createElement("div");
-sunrise_data.append(img6, sunrise);
+     let img6 = document.createElement("img");
+     img6.src ='https://cdn-icons-png.flaticon.com/128/3175/3175147.png';
 
-// 🌇 Sunset
-let sunset = document.createElement("div");
-sunset.innerText = `Sunset : ${convertUnixTime(data.sys.sunset)}`;
+     let sunrise_data = document.createElement("div");
+     sunrise_data.append(img6, sunrise);
 
-let img7 = document.createElement("img");
-img7.src ='https://cdn-icons-png.flaticon.com/128/1788/1788609.png';
 
-let sunset_data = document.createElement("div");
-sunset_data.append(img7, sunset);
+      let sunset = document.createElement("div");
+      sunset.innerText = `Sunset : ${convertUnixTime(data.sys.sunset)}`;
+
+      let img7 = document.createElement("img");
+     img7.src ='https://cdn-icons-png.flaticon.com/128/1788/1788609.png';
+
+       let sunset_data = document.createElement("div");
+       sunset_data.append(img7, sunset);
 
 
 
